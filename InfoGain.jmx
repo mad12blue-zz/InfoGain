@@ -1,0 +1,1635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${threads}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <longProp name="ThreadGroup.start_time">1518149236000</longProp>
+        <longProp name="ThreadGroup.end_time">1518149236000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="environment" elementType="Argument">
+              <stringProp name="Argument.name">environment</stringProp>
+              <stringProp name="Argument.value">${__P(environment,qa)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host" elementType="Argument">
+              <stringProp name="Argument.name">host</stringProp>
+              <stringProp name="Argument.value">${__P(host,ar-alb-test-1450743023.eu-west-1.elb.amazonaws.com)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="protocol" elementType="Argument">
+              <stringProp name="Argument.name">protocol</stringProp>
+              <stringProp name="Argument.value">${__P(protocol,http)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="port" elementType="Argument">
+              <stringProp name="Argument.name">port</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="curTime" elementType="Argument">
+              <stringProp name="Argument.name">curTime</stringProp>
+              <stringProp name="Argument.value">${__time(,curTime)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="defaultPath" elementType="Argument">
+              <stringProp name="Argument.name">defaultPath</stringProp>
+              <stringProp name="Argument.value">/api</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="token" elementType="Argument">
+              <stringProp name="Argument.name">token</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="companyId" elementType="Argument">
+              <stringProp name="Argument.name">companyId</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="razorpayKey" elementType="Argument">
+              <stringProp name="Argument.name">razorpayKey</stringProp>
+              <stringProp name="Argument.value">rzp_test_9LOGaavvau8o8w</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="razorpaySecret" elementType="Argument">
+              <stringProp name="Argument.name">razorpaySecret</stringProp>
+              <stringProp name="Argument.value">ue3NT6eWU0kf4Lqs5FeAtD9a</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="projectPath" elementType="Argument">
+              <stringProp name="Argument.name">projectPath</stringProp>
+              <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}${__BeanShell(File.separator,)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="jobId" elementType="Argument">
+              <stringProp name="Argument.name">jobId</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="signup" elementType="Argument">
+              <stringProp name="Argument.name">signup</stringProp>
+              <stringProp name="Argument.value">${__P(signup,true)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="resetData" elementType="Argument">
+              <stringProp name="Argument.name">resetData</stringProp>
+              <stringProp name="Argument.value">${__P(resetData,false)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="emailId" elementType="Argument">
+              <stringProp name="Argument.name">emailId</stringProp>
+              <stringProp name="Argument.value">${__P(emailId,testing+15-09-2018_124646@numberz.in)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="password" elementType="Argument">
+              <stringProp name="Argument.name">password</stringProp>
+              <stringProp name="Argument.value">${__P(password,Test@123)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="cdfile" elementType="Argument">
+              <stringProp name="Argument.name">cdfile</stringProp>
+              <stringProp name="Argument.value">CashDiscountScheme.xlsx</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="scopeId" elementType="Argument">
+              <stringProp name="Argument.name">scopeId</stringProp>
+              <stringProp name="Argument.value">a5b863e0-dfbc-11e7-8f0b-39798e5cc867</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="tempToken" elementType="Argument">
+              <stringProp name="Argument.name">tempToken</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="randVar" elementType="Argument">
+              <stringProp name="Argument.name">randVar</stringProp>
+              <stringProp name="Argument.value">${__UUID}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="counter" elementType="Argument">
+              <stringProp name="Argument.name">counter</stringProp>
+              <stringProp name="Argument.value">${dlCounter}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="onceOnly" elementType="Argument">
+              <stringProp name="Argument.name">onceOnly</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="merchantName" elementType="Argument">
+              <stringProp name="Argument.name">merchantName</stringProp>
+              <stringProp name="Argument.value">${__P(merchantName,TestName)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="dl" elementType="Argument">
+              <stringProp name="Argument.name">dl</stringProp>
+              <stringProp name="Argument.value">${__P(dl,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="differencePrecision" elementType="Argument">
+              <stringProp name="Argument.name">differencePrecision</stringProp>
+              <stringProp name="Argument.value">${__P(differencePrecision,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="differencePrecisionCheck" elementType="Argument">
+              <stringProp name="Argument.name">differencePrecisionCheck</stringProp>
+              <stringProp name="Argument.value">false</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="threads" elementType="Argument">
+              <stringProp name="Argument.name">threads</stringProp>
+              <stringProp name="Argument.value">${__P(threads,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="rampup" elementType="Argument">
+              <stringProp name="Argument.name">rampup</stringProp>
+              <stringProp name="Argument.value">${__P(rampup,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="DecideVariables - BeanShell Sampler" enabled="true">
+          <stringProp name="BeanShellSampler.query">import java.text.*;
+import java.io.*;
+import java.util.*;   
+
+try {
+
+    if (vars.get(&quot;environment&quot;).contains(&quot;qa&quot;)) 
+    {
+        vars.put(&quot;protocol&quot;,&quot;http&quot;);
+        vars.put(&quot;host&quot;,&quot;ar-alb-test-1450743023.eu-west-1.elb.amazonaws.com&quot;);
+    }
+
+    if (vars.get(&quot;environment&quot;).contains(&quot;prod&quot;)) 
+    {
+        vars.put(&quot;protocol&quot;,&quot;https&quot;);
+        vars.put(&quot;host&quot;,&quot;ar.numberz.in&quot;);
+    }
+
+    if (vars.get(&quot;emailId&quot;).equals(&quot;null&quot;)) 
+    {
+        vars.put(&quot;emailId&quot;,&quot;testing+${__time(d-MM-yyyy_hhmmss)}@numberz.in&quot;);
+    }
+    else
+    {
+    	   vars.put(&quot;signup&quot;,&quot;false&quot;);
+	   vars.put(&quot;resetData&quot;,&quot;true&quot;);   
+    }    
+
+}
+catch (Exception ex) {
+    log.error(ex.getMessage());
+    System.err.println(ex.getMessage());
+}</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+          <collectionProp name="UserParameters.names">
+            <stringProp name="3601339">uuid</stringProp>
+          </collectionProp>
+          <collectionProp name="UserParameters.thread_values">
+            <collectionProp name="-1753070663">
+              <stringProp name="187832203">${__UUID}</stringProp>
+            </collectionProp>
+          </collectionProp>
+          <boolProp name="UserParameters.per_iteration">true</boolProp>
+        </UserParameters>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${defaultPath}</stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Token Null" enabled="true">
+          <stringProp name="IfController.condition">&quot;${token}&quot;==&quot;&quot;</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager without Token" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://${host}</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://${host} </stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="SignUp - If Controller" enabled="false">
+            <stringProp name="IfController.condition">${signup}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Signup - HTTP Request" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;query&quot;:&quot;mutation SignUp($input: SignUpInput!) {\n  signUp(input: $input) {\n    token\n    user {\n      _id\n      firstName\n      lastName\n      isLocked\n      isVerified\n      roles {\n        entity\n        entityId\n        __typename\n      }\n      __typename\n    }\n    company {\n      _id\n      name\n      bankAccountId\n      __typename\n    }\n    __typename\n  }\n}\n&quot;,&quot;operationName&quot;:&quot;SignUp&quot;,&quot;variables&quot;:{&quot;input&quot;:{&quot;user&quot;:{&quot;firstName&quot;:&quot;&quot;,&quot;lastName&quot;:&quot;&quot;,&quot;phone&quot;:&quot;9999999999&quot;,&quot;email&quot;:&quot;${emailId}&quot;,&quot;password&quot;:&quot;Test@123&quot;},&quot;company&quot;:{&quot;name&quot;:&quot;${uuid}&quot;,&quot;email&quot;:&quot;${emailId}&quot;,&quot;phone&quot;:&quot;9999999999&quot;,&quot;poc&quot;:&quot;&quot;,&quot;gstin&quot;:&quot;&quot;}}}}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path"></stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">1</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Message Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="110541305">token</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="CompanyName - JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">companyName</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.signUp.company.name</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+              <stringProp name="Scope.variable">token</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="UUID - JSON Extractor" enabled="false">
+              <stringProp name="JSONPostProcessor.referenceNames">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.signUp.company.name</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+              <stringProp name="Scope.variable">token</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Signup" enabled="false"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Signup - HTTP Request" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;query&quot;:&quot;mutation SignUp($input: SignUpInput!) {\n  signUp(input: $input) {\n    token\n    user {\n      _id\n      firstName\n      lastName\n      isLocked\n      isVerified\n      roles {\n        entity\n        entityId\n        __typename\n      }\n      __typename\n    }\n    company {\n      _id\n      name\n      bankAccountId\n      __typename\n    }\n    __typename\n  }\n}\n&quot;,&quot;operationName&quot;:&quot;SignUp&quot;,&quot;variables&quot;:{&quot;input&quot;:{&quot;user&quot;:{&quot;firstName&quot;:&quot;&quot;,&quot;lastName&quot;:&quot;&quot;,&quot;email&quot;:&quot;email_${curTime}@mail.com&quot;,&quot;password&quot;:&quot;Test@123&quot;},&quot;company&quot;:{&quot;name&quot;:&quot;CompanyName_${curTime}&quot;,&quot;email&quot;:&quot;email_${curTime}@mail.com&quot;,&quot;phone&quot;:&quot;&quot;,&quot;poc&quot;:&quot;&quot;,&quot;gstin&quot;:&quot;&quot;}}}}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path"></stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">1</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Message Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="110541305">token</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="CompanyName - JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">companyName</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.signUp.company.name</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+              <stringProp name="Scope.variable">token</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Token - JSON Extractor" enabled="false">
+              <stringProp name="JSONPostProcessor.referenceNames">token</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.login.token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+              <stringProp name="Scope.variable">token</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login - HTTP Request" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;query&quot;:&quot;mutation Login($email: Email!, $password: String!) {\n  login(email: $email, password: $password) {\n    token\n    user {\n      _id\n      firstName\n      lastName\n      isLocked\n      isVerified\n      roles {\n        entity\n        entityId\n        __typename\n      }\n      __typename\n    }\n    company {\n      _id\n      name\n      bankAccountId\n      customers(skip: 0, limit: 1) {\n        items {\n          virtualBankAccount {\n            virtualAccountNum\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      invoices(type: [], orderBy: [], searchBy: [], searchText: \&quot;\&quot;, ranges: [], skip: 0, limit: 1, dueDate: [], invoiceDate: []) {\n        items {\n          _id\n          __typename\n        }\n        __typename\n      }\n      cfmCompany {\n        paymentGateways {\n          selectedGateway\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;email&quot;:&quot;${emailId}&quot;,&quot;password&quot;:&quot;${password}&quot;},&quot;operationName&quot;:&quot;Login&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path"></stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">1</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Message Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="110541305">token</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Token - JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">token</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.login.token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+              <stringProp name="Scope.variable">token</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="CompanyId - JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">companyId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.login.company._id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+              <stringProp name="Scope.variable">token</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="${emailId}" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path"></stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="Dummy - BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">Failure = true;
+FailureMessage = &quot;The account in which the data is loaded : &quot; + vars.get(&quot;emailId&quot;) + &quot; / Test@123&quot;</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Token Not Null" enabled="false">
+          <stringProp name="IfController.condition">&quot;${token}&quot; != null</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager with Token" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://${host}</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://${host}</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="DataReset - If Controller" enabled="true">
+            <stringProp name="IfController.condition">${resetData}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ResetData - HTTP Request" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;resetCompanyData&quot;,&quot;variables&quot;:{&quot;companyId&quot;:&quot;${companyId}&quot;},&quot;query&quot;:&quot;mutation resetCompanyData($companyId: String!) {\n  resetCompanyData(companyId: $companyId)\n}\n&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/api</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+          </hashTree>
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="DataLoad - Loop Controller" enabled="true">
+            <boolProp name="LoopController.continue_forever">true</boolProp>
+            <stringProp name="LoopController.loops">${dl}</stringProp>
+          </LoopController>
+          <hashTree>
+            <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="DataLoad - Counter" enabled="true">
+              <stringProp name="CounterConfig.start">1</stringProp>
+              <stringProp name="CounterConfig.end">${dl}</stringProp>
+              <stringProp name="CounterConfig.incr">1</stringProp>
+              <stringProp name="CounterConfig.name">dlCounter</stringProp>
+              <stringProp name="CounterConfig.format">_0</stringProp>
+              <boolProp name="CounterConfig.per_user">false</boolProp>
+            </CounterConfig>
+            <hashTree/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Import" enabled="true"/>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OnboardingFlowImport - HTTP Request" enabled="true">
+                <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                  <collectionProp name="HTTPFileArgs.files">
+                    <elementProp name="${projectPath}${merchantName}/ImportData_${__counter(TRUE,)}.xlsx" elementType="HTTPFileArg">
+                      <stringProp name="File.path">${projectPath}${merchantName}/ImportData_${__counter(TRUE,)}.xlsx</stringProp>
+                      <stringProp name="File.paramname">0</stringProp>
+                      <stringProp name="File.mimetype">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="operations" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.name">operations</stringProp>
+                      <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;ImportInvoices&quot;,&quot;variables&quot;:{&quot;file&quot;:null,&quot;companyId&quot;:&quot;${companyId}&quot;},&quot;query&quot;:&quot;mutation ImportInvoices($file: Upload!) {\n  importInvoices(file: $file) {\n    jobId\n    errors\n    __typename\n  }\n}\n&quot;}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    </elementProp>
+                    <elementProp name="map" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.name">map</stringProp>
+                      <stringProp name="Argument.value">{&quot;0&quot;:[&quot;variables.file&quot;]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain"></stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol"></stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path"></stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+                <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">Java</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">1</intProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Message Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="101296568">jobId</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JobId - JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">jobId</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.importInvoices.jobId</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+                <stringProp name="Scope.variable">token</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="Import - GetProgress - WhileLoop" enabled="true">
+              <stringProp name="WhileController.condition">${__javaScript(&quot;${jobProgress}&quot; != &quot;100&quot;,)}</stringProp>
+            </WhileController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OnboardingFlowImportGetProgress - HTTP Request" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;query&quot;:&quot;query getJob($jobId: String!) {\n  jobProgress(jobId: $jobId) {\n    id\n    status\n    progress\n    __typename\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;jobId&quot;:&quot;${jobId}&quot;},&quot;operationName&quot;:&quot;getJob&quot;}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain"></stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol"></stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path"></stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">1</intProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Message Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1422950650">active</stringProp>
+                  <stringProp name="-599445191">complete</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">34</intProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JobProgress - JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">jobProgress</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.jobProgress.progress</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+                <stringProp name="Scope.variable">token</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="GetCompanySummary" enabled="false"/>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="GetCompanyStatisticsFromFile - BeanShell PreProcessor" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="script">import java.text.*;
+import java.io.*;
+import java.util.*;
+
+String filename = vars.get(&quot;projectPath&quot;)+vars.get(&quot;merchantName&quot;)+&quot;/CompanyStatistics&quot;+vars.get(&quot;dlCounter&quot;)+&quot;.csv&quot;;
+
+ArrayList strList = new ArrayList();     
+
+try {
+    //Setting the job status to null from &apos;complete&apos;. Nothing to do with this code
+    vars.put(&quot;jobStatus&quot;,&quot;&quot;);
+    vars.put(&quot;onceOnly&quot;,&quot;true&quot;);
+
+    File file = new File(filename);
+
+    if (!file.exists()) 
+    {
+        throw new Exception (&quot;ERROR: file &quot; + filename + &quot; not found&quot;);
+    }
+
+    BufferedReader bufRdr = new BufferedReader(new InputStreamReader(new FileInputStream(file), &quot;UTF8&quot;));
+    String line = null;
+    Integer i = 0, j = 1;
+    
+
+    while((line = bufRdr.readLine()) != null) 
+    {	
+    	   //System.out.println(&quot;LINE = &quot; + line);
+        strList.add(line);
+        i++;
+    }
+
+    bufRdr.close();                
+    
+    //while (j != i) 
+    //{
+    	String[] variables = strList.get(j).split(&quot;,&quot;);
+    	
+	 	   vars.put(&quot;TotalOutstanding&quot;,variables[0]);
+	 	   vars.put(&quot;InvoiceOverdue&quot;,variables[1]);
+	 	   vars.put(&quot;UnutilisedCreditNotes&quot;,variables[2]);	
+	 	   
+    	//j++; 
+    //}
+
+}
+catch (Exception ex) {
+    IsSuccess = false; 
+    log.error(ex.getMessage());
+    System.err.println(ex.getMessage());
+}
+catch (Throwable thex) {
+    System.err.println(thex.getMessage());
+}</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CompanyStatistics - CSV Data Set Config" enabled="false">
+                <stringProp name="delimiter">,</stringProp>
+                <stringProp name="fileEncoding"></stringProp>
+                <stringProp name="filename">${projectPath}${merchantName}/CompanyStatistics_${__counter(TRUE,)}.csv</stringProp>
+                <boolProp name="ignoreFirstLine">true</boolProp>
+                <boolProp name="quotedData">true</boolProp>
+                <boolProp name="recycle">false</boolProp>
+                <stringProp name="shareMode">shareMode.all</stringProp>
+                <boolProp name="stopThread">false</boolProp>
+                <stringProp name="variableNames">TotalOutstanding,InvoiceOverdue,UnutilisedCreditNotes</stringProp>
+              </CSVDataSet>
+              <hashTree/>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetCompanySummary - HTTP Request" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;query&quot;:&quot;query getCompany($companyId: String!) {\n  getCompany(companyId: $companyId) {\n    _id\n    summary {\n      totalOutstanding\n      invoiceOverdue\n      unutilisedCreditNotes\n      __typename\n    }\n    __typename\n  }\n}\n&quot;,&quot;operationName&quot;:&quot;getCompany&quot;,&quot;variables&quot;:{&quot;companyId&quot;:&quot;${companyId}&quot;}}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain"></stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol"></stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path"></stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">1</intProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="totalOutstanding - JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">totalOutstanding</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.getCompany.summary.totalOutstanding</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+                <stringProp name="Scope.variable">token</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="invoiceOverdue - JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">invoiceOverdue</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.getCompany.summary.invoiceOverdue</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+                <stringProp name="Scope.variable">token</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="unutilisedCreditNotes - JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">unutilisedCreditNotes</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.getCompany.summary.unutilisedCreditNotes</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+                <stringProp name="Scope.variable">token</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="totalOutstanding - BeanShell Assertion" enabled="true">
+                <stringProp name="BeanShellAssertion.query">if ((String.valueOf(${totalOutstanding})).equals(String.valueOf(${TotalOutstanding}))) {
+    Failure = false;
+} 
+else {
+    Failure = true;
+    FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalOutstanding does not match, expected: &quot; + ${TotalOutstanding} + &quot; but found: &quot; + ${totalOutstanding};
+}</stringProp>
+                <stringProp name="BeanShellAssertion.filename"></stringProp>
+                <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+              </BeanShellAssertion>
+              <hashTree/>
+              <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="invoiceOverdue - BeanShell Assertion" enabled="true">
+                <stringProp name="BeanShellAssertion.query">if ((String.valueOf(${invoiceOverdue})).equals(String.valueOf(${InvoiceOverdue}))) {
+    Failure = false;
+} 
+else {
+    Failure = true;
+    FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The InvoiceOverdue does not match, expected: &quot; + ${InvoiceOverdue} + &quot; but found: &quot; + ${invoiceOverdue};
+}</stringProp>
+                <stringProp name="BeanShellAssertion.filename"></stringProp>
+                <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+              </BeanShellAssertion>
+              <hashTree/>
+              <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="unutilisedCreditNotes - BeanShell Assertion" enabled="true">
+                <stringProp name="BeanShellAssertion.query">if ((String.valueOf(${unutilisedCreditNotes})).equals(String.valueOf(${UnutilisedCreditNotes}))) {
+    Failure = false;
+} 
+else {
+    Failure = true;
+    FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The UnutilisedCreditNotes does not match, expected: &quot; + ${UnutilisedCreditNotes} + &quot; but found: &quot; + ${unutilisedCreditNotes};
+}</stringProp>
+                <stringProp name="BeanShellAssertion.filename"></stringProp>
+                <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+              </BeanShellAssertion>
+              <hashTree/>
+              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+                <boolProp name="displayJMeterProperties">false</boolProp>
+                <boolProp name="displayJMeterVariables">true</boolProp>
+                <boolProp name="displaySystemProperties">false</boolProp>
+              </DebugSampler>
+              <hashTree/>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="GetCustomerIds" enabled="true"/>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetCustomerIds - HTTP Request" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;query&quot;:&quot;query getCustomerIds($companyId: String!, $pageObject: PageObject, $queryObject: QueryObject, $fetchSummary: Boolean) {\n  customers(companyId: $companyId, pageObject: $pageObject, queryObject: $queryObject, fetchSummary: $fetchSummary) {\n    list {\n      _id\n      name\n      refId\n      __typename\n    }\n    listInfo {\n      count\n      offset\n      hasMore\n      total\n      __typename\n    }\n    __typename\n  }\n}\n&quot;,&quot;operationName&quot;:&quot;getCustomerIds&quot;,&quot;variables&quot;:{&quot;companyId&quot;:&quot;${companyId}&quot;,&quot;queryObject&quot;:{&quot;searchText&quot;:&quot;&quot;,&quot;sortBy&quot;:[&quot;CUSTOMER_NAME_ASC&quot;]},&quot;pageObject&quot;:{&quot;offset&quot;:0,&quot;count&quot;:100000},&quot;fetchSummary&quot;:false}}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain"></stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol"></stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path"></stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">1</intProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="GetCustomerCountFromFile - BeanShell PostProcessor" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="script">import java.text.*;
+import java.io.*;
+import java.util.*;
+
+String filename = vars.get(&quot;projectPath&quot;)+vars.get(&quot;merchantName&quot;)+&quot;/CustomerStatistics&quot;+vars.get(&quot;dlCounter&quot;)+&quot;.csv&quot;;
+
+ArrayList strList = new ArrayList();     
+
+try {
+	
+    File file = new File(filename);
+
+    if (!file.exists()) 
+    {
+        throw new Exception (&quot;ERROR: file &quot; + filename + &quot; not found&quot;);
+    }
+
+    BufferedReader bufRdr = new BufferedReader(new InputStreamReader(new FileInputStream(file), &quot;UTF8&quot;));
+    String line = null;
+    Integer i = 0;
+    
+
+    while((line = bufRdr.readLine()) != null) 
+    {	
+        i++;
+    }
+
+   	vars.put(&quot;TotalCustomers&quot;,(i-1).toString());
+
+    bufRdr.close();                
+}
+catch (Exception ex) {
+    IsSuccess = false; 
+    log.error(ex.getMessage());
+    System.err.println(ex.getMessage());
+}
+catch (Throwable thex) {
+    System.err.println(thex.getMessage());
+}</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">CustId_RegEx</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;_id&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default"></stringProp>
+                <stringProp name="RegexExtractor.match_number">-1</stringProp>
+                <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
+              </RegexExtractor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="customerCount - JSON Extractor" enabled="false">
+                <stringProp name="JSONPostProcessor.referenceNames">totalCustomers</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.customers.listInfo.count</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+                <stringProp name="Scope.variable">custIdList</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="totalCustomers - BeanShell Assertion" enabled="true">
+                <stringProp name="BeanShellAssertion.query">vars.put(&quot;onceOnly&quot;,&quot;false&quot;);
+
+if(${__javaScript(vars.get(&quot;TotalCustomers&quot;) != null)}) 
+{
+	if ((String.valueOf(${CustId_RegEx_matchNr})).equals(String.valueOf(${TotalCustomers}))) 
+	{
+     	Failure = false;
+	} 
+	else 
+	{
+     	Failure = true;
+     	FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalCustomers does not match, expected: &quot; + ${TotalCustomers} + &quot; but found: &quot; + ${CustId_RegEx_matchNr};
+	}
+}
+else
+{
+    Failure = true;
+    FailureMessage = vars.get(&quot;merchantName&quot;)+&quot; - The Customers are not present in CustomerStatistics&quot;+vars.get(&quot;dlCounter&quot;)+&quot;.csv&quot;;
+}</stringProp>
+                <stringProp name="BeanShellAssertion.filename"></stringProp>
+                <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+              </BeanShellAssertion>
+              <hashTree/>
+              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+                <boolProp name="displayJMeterProperties">false</boolProp>
+                <boolProp name="displayJMeterVariables">true</boolProp>
+                <boolProp name="displaySystemProperties">false</boolProp>
+              </DebugSampler>
+              <hashTree/>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="GetCustomerSummary" enabled="true"/>
+            <hashTree>
+              <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="GetCustomerSummary - ForEachLoop" enabled="true">
+                <stringProp name="ForeachController.inputVal">CustId_RegEx</stringProp>
+                <stringProp name="ForeachController.returnVal">custId</stringProp>
+                <boolProp name="ForeachController.useSeparator">true</boolProp>
+                <stringProp name="ForeachController.startIndex">0</stringProp>
+                <stringProp name="ForeachController.endIndex">${CustId_RegEx_matchNr}</stringProp>
+              </ForeachController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetCustomerSummary - HTTP Request" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&quot;query&quot;:&quot;query getCustomer($companyId: String!, $pageObject: PageObject, $queryObject: QueryObject, $fetchSummary: Boolean) {\n  customers(companyId: $companyId, pageObject: $pageObject, queryObject: $queryObject, fetchSummary: $fetchSummary) {\n    list {\n      _id\n      name\n      refId\n      lastReminderLog {\n        date\n        __typename\n      }\n      summary {\n        totalReceivables\n        totalReceived\n        totalOutstanding\n        totalOverdue\n        __typename\n      }\n      __typename\n    }\n    listInfo {\n      count\n      offset\n      hasMore\n      total\n      __typename\n    }\n    __typename\n  }\n}\n&quot;,&quot;operationName&quot;:&quot;getCustomer&quot;,&quot;variables&quot;:{&quot;companyId&quot;:&quot;${companyId}&quot;,&quot;queryObject&quot;:{&quot;sortBy&quot;:[],&quot;idList&quot;:[&quot;${custId}&quot;]},&quot;fetchSummary&quot;:true}}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain"></stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol"></stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path"></stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="49586">200</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">1</intProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="refId - JSON Extractor" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">refId</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.customers.list[0].refId</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  <stringProp name="Sample.scope">all</stringProp>
+                  <stringProp name="Scope.variable">token</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                  <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="custName - JSON Extractor" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">custName</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.customers.list[0].name</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  <stringProp name="Sample.scope">all</stringProp>
+                  <stringProp name="Scope.variable">token</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                  <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="totalReceivables - JSON Extractor" enabled="false">
+                  <stringProp name="JSONPostProcessor.referenceNames">totalReceivables</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.customers.list[0].summary.totalReceivables</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  <stringProp name="Sample.scope">all</stringProp>
+                  <stringProp name="Scope.variable">token</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                  <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="totalReceived - JSON Extractor" enabled="false">
+                  <stringProp name="JSONPostProcessor.referenceNames">totalReceived</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.customers.list[0].summary.totalReceived</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  <stringProp name="Sample.scope">all</stringProp>
+                  <stringProp name="Scope.variable">token</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                  <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="totalOutstandingC - JSON Extractor" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">totalOutstandingC</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.customers.list[0].summary.totalOutstanding</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  <stringProp name="Sample.scope">all</stringProp>
+                  <stringProp name="Scope.variable">token</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                  <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="totalOverdue - JSON Extractor" enabled="false">
+                  <stringProp name="JSONPostProcessor.referenceNames">totalOverdue</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.customers.list[0].summary.totalOverdue</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  <stringProp name="Sample.scope">all</stringProp>
+                  <stringProp name="Scope.variable">token</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                  <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="GetCustomerStatisticsFromFile - BeanShell PostProcessor" enabled="true">
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="script">import java.text.*;
+import java.io.*;
+import java.util.*;
+
+String filename = vars.get(&quot;projectPath&quot;)+vars.get(&quot;merchantName&quot;)+&quot;/CustomerStatistics&quot;+vars.get(&quot;dlCounter&quot;)+&quot;.csv&quot;;
+
+ArrayList strList = new ArrayList();     
+
+try {
+	
+    File file = new File(filename);
+
+    if (!file.exists()) 
+    {
+        throw new Exception (&quot;ERROR: file &quot; + filename + &quot; not found&quot;);
+    }
+
+    BufferedReader bufRdr = new BufferedReader(new InputStreamReader(new FileInputStream(file), &quot;UTF8&quot;));
+    String line = null;
+    Integer i = 0, j = 0;
+    
+
+    while((line = bufRdr.readLine()) != null) 
+    {	
+    	   //System.out.println(&quot;LINE = &quot; + line);
+        strList.add(line);
+        i++;
+    }
+
+   	//vars.put(&quot;TotalCustomers&quot;,(i-1).toString());
+
+    bufRdr.close();                
+    
+    while (j != i) 
+    {
+    	String[] variables = strList.get(j).split(&quot;,&quot;);
+    	
+    		if (variables[0].equals(vars.get(&quot;refId&quot;))) 
+    		{
+	 	   vars.put(&quot;TotalReceivables&quot;,variables[1]);
+	 	   vars.put(&quot;TotalReceived&quot;,variables[2]);
+	 	   vars.put(&quot;TotalOutstandingC&quot;,variables[3]);
+	 	   vars.put(&quot;TotalOverdue&quot;,variables[4]);	
+	 	   
+	 	   break;
+    		}
+    		else
+    		{
+    		   vars.put(&quot;TotalReceivables&quot;,null);
+	 	   vars.put(&quot;TotalReceived&quot;,null);
+	 	   vars.put(&quot;TotalOutstandingC&quot;,null);
+	 	   vars.put(&quot;TotalOverdue&quot;,null);
+    		}
+    	j++; 
+    }
+
+}
+catch (Exception ex) {
+    IsSuccess = false; 
+    log.error(ex.getMessage());
+    System.err.println(ex.getMessage());
+}
+catch (Throwable thex) {
+    System.err.println(thex.getMessage());
+}</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+                <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="totalReceivables - BeanShell Assertion" enabled="false">
+                  <stringProp name="BeanShellAssertion.query">if(${__javaScript(vars.get(&quot;TotalReceivables&quot;) != null)}) 
+{	
+	if ((String.valueOf(${totalReceivables})).equals(String.valueOf(${TotalReceivables}))) 
+	{
+     	Failure = false;
+	} 
+	else 
+	{
+     	Failure = true;
+     	FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalReceivables for refId  / customer : &quot; + vars.get(&quot;refId&quot;) + &quot; / &quot; + vars.get(&quot;custName&quot;) + &quot; does not match, expected: &quot; + ${TotalReceivables} + &quot; but found: &quot; + ${totalReceivables};
+	}
+}
+else
+{
+    Failure = true;
+    FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalReceivables for refId / customer : &quot; + vars.get(&quot;refId&quot;) + &quot; / &quot; + vars.get(&quot;custName&quot;) +  &quot; is not present in CustomerStatistics&quot;+vars.get(&quot;dlCounter&quot;)+&quot;.csv&quot;;
+}
+</stringProp>
+                  <stringProp name="BeanShellAssertion.filename"></stringProp>
+                  <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                  <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+                </BeanShellAssertion>
+                <hashTree/>
+                <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="totalReceived - BeanShell Assertion" enabled="false">
+                  <stringProp name="BeanShellAssertion.query">if(${__javaScript(vars.get(&quot;TotalReceived&quot;) != null)}) 
+{
+	if ((String.valueOf(${totalReceived})).equals(String.valueOf(${TotalReceived}))) 
+	{
+     	Failure = false;
+	} 
+	else 
+	{
+     	Failure = true;
+     	FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalReceived for refId  / customer : &quot; + vars.get(&quot;refId&quot;) + &quot; / &quot; + vars.get(&quot;custName&quot;) + &quot; does not match, expected: &quot; + ${TotalReceived} + &quot; but found: &quot; + ${totalReceived};
+	}
+}
+else
+{
+    Failure = true;
+    FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalReceived for refId  / customer : &quot; + vars.get(&quot;refId&quot;) + &quot; / &quot; + vars.get(&quot;custName&quot;) + &quot; is not present in CustomerStatistics&quot;+vars.get(&quot;dlCounter&quot;)+&quot;.csv&quot;;
+}</stringProp>
+                  <stringProp name="BeanShellAssertion.filename"></stringProp>
+                  <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                  <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+                </BeanShellAssertion>
+                <hashTree/>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="DifferencePrecisionTotalOutstandingC - BeanShell PostProcessor" enabled="true">
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="script">import java.text.*;
+import java.io.*;
+import java.util.*;
+//import java.math.BigDecimal;
+import java.math.*;
+
+	//log.info(&quot;-------start--------&quot;);
+	vars.put(&quot;differencePrecisionCheck&quot;, &quot;false&quot;);
+		
+try {
+
+	if(vars.get(&quot;TotalOutstandingC&quot;) != null) 
+	{
+		vars.put(&quot;valueNull&quot;, &quot;false&quot;);
+	//log.info(vars.get(&quot;custId&quot;));
+     vars.put(&quot;totOut&quot;, vars.get(&quot;totalOutstandingC&quot;));
+     vars.put(&quot;TotOut&quot;, vars.get(&quot;TotalOutstandingC&quot;));
+
+	BigDecimal totOutD = new BigDecimal(vars.get(&quot;totOut&quot;));
+	BigDecimal TotOutD = new BigDecimal(vars.get(&quot;TotOut&quot;));
+	BigDecimal diffPrec = new BigDecimal(vars.get(&quot;differencePrecision&quot;));
+	//BigDecimal diffPrec = new BigDecimal(10);
+	MathContext mc = new MathContext(20); // 20 precision
+	BigDecimal diff = totOutD.subtract(TotOutD, mc);
+	BigDecimal diff1 = new BigDecimal(0);;
+	BigDecimal diff2 = new BigDecimal(0);;
+
+	vars.put(&quot;test&quot;, totOutD.toPlainString());
+	//log.info(vars.get(&quot;test&quot;));
+
+	vars.put(&quot;test1&quot;, TotOutD.toPlainString());
+	//log.info(vars.get(&quot;test1&quot;));
+
+	vars.put(&quot;test2&quot;, diff.toPlainString());
+	//log.info(vars.get(&quot;test2&quot;));
+	
+	if ( diff.signum() == -1)
+	{	
+		vars.put(&quot;test3&quot;, diff.toPlainString());
+		vars.put(&quot;test4&quot;,vars.get(&quot;test3&quot;).replace(&quot;-&quot;,&quot;&quot;));
+		diff1 = new BigDecimal(vars.get(&quot;test4&quot;));
+
+		vars.put(&quot;test6&quot;, diff1.toPlainString());
+		//log.info(vars.get(&quot;test6&quot;));
+   	}else
+   	{
+   		diff1 = diff;
+   		vars.put(&quot;test6&quot;, diff1.toPlainString());
+		//log.info(vars.get(&quot;test6&quot;));
+   		
+   	}
+
+   	diff2 = diff1.subtract(diffPrec, mc);
+
+   	vars.put(&quot;test5&quot;, diff2.toPlainString());
+	//log.info(vars.get(&quot;test5&quot;));
+
+	if ( diff2.signum() == 1)
+	{
+		//log.info(&quot;Check Failed&quot;);
+		vars.put(&quot;differencePrecisionCheck&quot;, &quot;false&quot;);
+	}
+	
+	if ((diff2.signum() == 0) || (diff2.signum() == -1))
+	{
+		//log.info(&quot;Check Passed&quot;);
+		vars.put(&quot;differencePrecisionCheck&quot;, &quot;true&quot;);
+	}
+
+	}
+	else
+	{
+		vars.put(&quot;valueNull&quot;, &quot;true&quot;);	
+	}
+	
+	//log.info(&quot;-------stop--------&quot;);
+}
+catch (Exception ex) {
+    IsSuccess = false; 
+    //log.error(ex.getMessage());
+    //System.err.println(ex.getMessage());
+}
+catch (Throwable thex) {
+    //System.err.println(thex.getMessage());
+}</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+                <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="totalOutstandingC - BeanShell Assertion" enabled="true">
+                  <stringProp name="BeanShellAssertion.query">if(${__javaScript(vars.get(&quot;TotalOutstandingC&quot;) != null)}) 
+{
+	//if ((String.valueOf(${totalOutstandingC})).equals(String.valueOf(${TotalOutstandingC}))) 
+	if ((String.valueOf(${differencePrecisionCheck})).equals(&quot;true&quot;)) 
+	{
+     	Failure = false;
+	} 
+	else 
+	{
+     	Failure = true;
+     	FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalOutstandingC for refId / customer : &quot; + vars.get(&quot;refId&quot;) + &quot; / &quot; + vars.get(&quot;custName&quot;) + &quot; does not match, expected: &quot; + ${TotalOutstandingC} + &quot; but found: &quot; + ${totalOutstandingC};
+	}
+}
+else
+{
+    Failure = true;
+    FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalOutstanding for refId / customer : &quot; + vars.get(&quot;refId&quot;) + &quot; / &quot; + vars.get(&quot;custName&quot;) +  &quot; is not present in CustomerStatistics&quot;+vars.get(&quot;dlCounter&quot;)+&quot;.csv&quot;;
+}</stringProp>
+                  <stringProp name="BeanShellAssertion.filename"></stringProp>
+                  <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                  <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+                </BeanShellAssertion>
+                <hashTree/>
+                <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="totalOverdue - BeanShell Assertion" enabled="false">
+                  <stringProp name="BeanShellAssertion.query">if(${__javaScript(vars.get(&quot;TotalOverdue&quot;) != null)}) 
+{
+	if ((String.valueOf(${totalOverdue})).equals(String.valueOf(${TotalOverdue}))) 
+	{
+     	Failure = false;
+	} 
+	else 
+	{
+     	Failure = true;
+     	FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalOverdue for refId  / customer : &quot; + vars.get(&quot;refId&quot;) + &quot; / &quot; + vars.get(&quot;custName&quot;) + &quot; does not match, expected: &quot; + ${TotalOverdue} + &quot; but found: &quot; + ${totalOverdue};
+	}
+}
+else
+{
+    Failure = true;
+    FailureMessage = vars.get(&quot;merchantName&quot;)+&quot;(DataLoad&quot;+vars.get(&quot;dlCounter&quot;)+&quot;) - The TotalOverdue for refId  / customer : &quot; + vars.get(&quot;refId&quot;) + &quot; / &quot; + vars.get(&quot;custName&quot;) + &quot; is not present in CustomerStatistics&quot;+vars.get(&quot;dlCounter&quot;)+&quot;.csv&quot;;
+}</stringProp>
+                  <stringProp name="BeanShellAssertion.filename"></stringProp>
+                  <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                  <boolProp name="BeanShellAssertion.resetInterpreter">true</boolProp>
+                </BeanShellAssertion>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="false">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySamplerProperties">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugPostProcessor>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">/Users/madhan/JMeter/Numberz/Reports/ApiTestReport.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${projectPath}/${merchantName}/${merchantName}_ErrorReport_${__time(d-MM-yyyy_hhmmss)}.csv</stringProp>
+          <boolProp name="useGroupName">true</boolProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">/Users/madhan/JMeter/NumberzImportTest/Result</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="false">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list"/>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">true</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">false</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <stringProp name="ProxyControlGui.domains">http://ar-alb-test-1450743023.eu-west-1.elb.amazonaws.com/#/</stringProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">0</intProp>
+      </ProxyControl>
+      <hashTree/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="WorkBench Test Fragment" enabled="false"/>
+      <hashTree>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="true"/>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
